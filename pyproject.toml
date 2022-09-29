@@ -1,0 +1,45 @@
+[project]
+name = "aisprint_ams_influx_sync"
+description = "AI-SPRINT Monitoring Subsystem (AMS) InfluxDB synchroniser"
+version = "1.0"
+keywords = [ "aisprint", "AI-SRINT", "AMS" ]
+authors = [
+    { name="Michał Soczewka", email="msoczewka@7bulls.com" }
+]
+maintainers = [
+    { name="Michał Soczewka", email="msoczewka@7bulls.com" }
+]
+readme = "README.txt"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: System :: Monitoring"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "influxdb-client==1.31.0"
+]
+
+[project.urls]
+Homepage = "https://www.ai-sprint-project.eu/"
+Repository = "https://github.com/ai-sprint-eu-project"
+
+[build-system]
+requires = ["setuptools>=56.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aisprint.influx_synchroniser*"]
+
+[project.scripts]
+influx-synchroniser = "aisprint.influx_synchroniser.main:main"
